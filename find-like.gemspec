@@ -1,17 +1,17 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'find/like/version'
+require 'find_like/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'find-like'
-  spec.version       = Find::Like::VERSION
+  spec.name          = 'find_like'
+  spec.version       = FindLike::VERSION
   spec.authors       = ['Udit Gupta']
   spec.email         = ['uditgupta.mail@gmail.com']
 
-  spec.summary       = 'unix find like command line tool'
-  spec.description   = 'The  find -like utility recursively descend the directory tree of the given  path  and evaluate the given  expression  for each file in the tree'
-  spec.homepage      = 'https://github.com/45minutepromise/find-like'
+  spec.summary       = 'unix find_like like command line tool'
+  spec.description   = 'The  find_like -like utility recursively descend the directory tree of the given  path  and evaluate the given  expression  for each file in the tree'
+  spec.homepage      = 'https://github.com/45minutepromise/find_like-like'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -33,6 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.49.1'like.gemspec
+  spec.add_development_dependency 'rubocop', '~> 0.49.1'
   spec.add_development_dependency 'coveralls'
 end

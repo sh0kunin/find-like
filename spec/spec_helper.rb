@@ -1,5 +1,4 @@
 require 'bundler/setup'
-require 'find/like'
 require 'coveralls'
 
 Coveralls.wear!

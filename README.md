@@ -12,7 +12,7 @@ The synopsis of the command line interface adhere to the following format:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'find-like'
+gem 'find_like'
 ```
 
 And then execute:

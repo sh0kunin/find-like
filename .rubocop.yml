@@ -3,5 +3,5 @@ AllCops:
   Exclude:
     - 'spec/**/*.rb'
     - 'Rakefile'
-    - 'find-like.gemspec'
+    - 'find_like-like.gemspec'
   TargetRubyVersion: 2.4
