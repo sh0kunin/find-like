@@ -1,7 +1,7 @@
-require "find/like/version"
+# frozen_string_literal: true
 
-module Find
-  module Like
-    # Your code goes here...
-  end
+require 'find/like/version'
+
+# Module for Find like command like tool.
+module FindLike
 end

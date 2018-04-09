@@ -1,0 +1,7 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'Rakefile'
+    - 'find-like.gemspec'
+  TargetRubyVersion: 2.4
