@@ -102,7 +102,7 @@ To run the CI task locally
 
 ## Test
 
-This repository have rspec test and unit test to full coverage of the code
+This repository has rspec tests and unit test to provide full coverage of the code
   
 ## Development
 
