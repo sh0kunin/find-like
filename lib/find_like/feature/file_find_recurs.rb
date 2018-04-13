@@ -1,5 +1,5 @@
 module FindLike
-  class FileFind
+  class FileFindRecurs
     # The starting path(s) for the search. The default is the current directory.
     # This can be a single path or an array of paths.
     #
