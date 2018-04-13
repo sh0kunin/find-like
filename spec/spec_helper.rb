@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'coveralls'
+require 'find_like'
 
 Coveralls.wear!
 
