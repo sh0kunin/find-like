@@ -68,8 +68,8 @@ src="https://coveralls.io/repos/github/45minutepromise/find-like/badge.svg?branc
 
 <p>find -like tool is a comand line interface, that will allow you to search
 for files in a directory hierarchy. The synopsis of the command line
-interface adhere to the following format: <code>find [-P | -L]
-[--exclude-dir=path] path [expression]</code></p>
+interface adhere to the following format: <code>find [--P | --L]
+[--exclude-dir=path] --path=path [expression]</code></p>
 
 <h2 id="label-Installation">Installation</h2>
 
@@ -80,22 +80,134 @@ interface adhere to the following format: <code>find [-P | -L]
 
 <p>And then execute:</p>
 
-<pre class="code ruby"><code class="ruby">$ bundle</code></pre>
+<pre class="code ruby"><code class="ruby">$ bundle install</code></pre>
 
 <p>Or install it yourself as:</p>
 
-<pre class="code ruby"><code class="ruby">$ gem install find-like</code></pre>
+<pre class="code ruby"><code class="ruby">$ gem install find_like</code></pre>
+
+<h2 id="label-Command+line+installation">Command line installation</h2>
+
+<p>Open a terminal and do following to get ready to use find_like</p>
+
+<pre class="code ruby"><code class="ruby">$ git clone https://github.com/45minutepromise/find-like
+$ cd find-like
+$ bundle install
+$ bundle exec rake install</code></pre>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>TODO: Write usage instructions here</p>
+<p>Find like execute similar to how <code>find</code> command work on unix
+systems.</p>
+
+<p>Lets try to understand each flag</p>
+<ol><li>
+<p><code>--path=path</code> is a mandatory argument to start search this is
+the most basic command</p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby">--path=&#39;directory-path-to-start-search-from&#39;&#39;</code></pre>
+
+<pre class="code ruby"><code class="ruby">--path=.</code></pre>
+
+<p>return all files/directory/links in the current directory recursively</p>
+
+<pre class="code ruby"><code class="ruby">--path=/Users/uditgupta</code></pre>
+
+<p>return all files/directory/links in <code>/Users/uditgupta</code>
+recursively</p>
+<ol><li>
+<p><code>[--P | --L]</code> These are optional argument. –P is default, in
+case none is supplied.</p>
+</li></ol>
+
+<p>-P - Cause the file information and file type returned for each symbolic
+link to be those of the link itself. This should be the default behaviour.
+-L - Cause the file information and file type returned for each symbolic
+link to be those of the file referenced by the link, not the link itself.
+If the reference file does not exist, the file information and type will be
+for the link itself.</p>
+
+<pre class="code ruby"><code class="ruby">--L --path=.</code></pre>
+
+<p>return all files/directory/links in the current directory recursively,
+including the paths to the symlinks if any, else will resolve to originals.</p>
+<ol><li>
+<p><code>--name=pattern</code> - True if the last component of the pathname
+being examined matches pattern . <code>find_like --path=.
+--name=*.rb</code><br> return all files/directory/links that ends with .rb
+in the current directory recursively.</p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby">--path=/Users/uditgupta --name=test.rb</code></pre>
+
+<p>return all files that ends with test.rb in the
+<code>/Users/uditgupta</code> directory recursively.</p>
+<ol><li>
+<p><code>--rname=pattern</code> - True if the whole path of the file matches
+pattern using regular expression. To match a file named
+<code>&#39;./foo/bar&#39;</code>  you can use the regular expression
+<code>&#39;.*/[ba]*&#39;</code> or
+<code>&#39;.<strong>/foo/.</strong>&#39;</code> or <code>&#39;/foo/
+&#39;</code>.</p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby">--L --path=/Users/uditgupta --name=*.rb --rname=&quot;*/foo/*&quot;</code></pre>
+
+<p>return all files that ends with .rb and matches regular expression
+<strong><code>/foo/</code></strong> in the <code>/Users/uditgupta</code>
+directory recursively.</p>
+<ol><li>
+<p><code>--type=f|d|l</code></p>
+</li></ol>
+
+<pre class="code ruby"><code class="ruby">--path=. --type=d</code></pre>
+
+<p>return only directories in current directory recursively.</p>
+
+<pre class="code ruby"><code class="ruby">--path=. --type=d</code></pre>
+
+<p>return only files in current directory recursively.</p>
+
+<pre class="code ruby"><code class="ruby">--path=. --type=d</code></pre>
+
+<p>return only links in current directory recursively.</p>
+
+<h2 id="label-Continuous+Integration">Continuous Integration</h2>
+
+<p>Using Travis CI to keep a check on the health of <code>master</code>
+branch.  [Travis find_like]: <a
+href="https://travis-ci.org/45minutepromise/find-like">travis-ci.org/45minutepromise/find-like</a></p>
+<ul><li>
+<p>Each pushed commit runs the test, both spec and unit tests.</p>
+</li><li>
+<p>Check if the code passed the code analyzer <code>Rubocop</code> [Rubocop]:
+<a href="https://github.com/bbatsov/rubocop">github.com/bbatsov/rubocop</a></p>
+</li><li>
+<p>Check if the code coverage is upto the mark, using <code>coveralls</code>
+to handle that: [coveralls]: <a
+href="https://coveralls.io/github/45minutepromise/find-like?branch=master">coveralls.io/github/45minutepromise/find-like?branch=master</a></p>
+</li><li>
+<p>Check if the documentation is up to date. Using Yard to handle library
+documentation  [Yard]: <a
+href="https://github.com/lsegal/yard">github.com/lsegal/yard</a></p>
+
+<p>You can also read complete documentation of the project</p>
+</li></ul>
+
+<p>To run the CI task locally</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle exec rake ci</code></pre>
+
+<h2 id="label-Test">Test</h2>
+
+<p>This repository has rspec tests and unit test to provide full coverage of
+the code</p>
 
 <h2 id="label-Development">Development</h2>
 
 <p>After checking out the repo, run <code>bin/setup</code> to install
-dependencies. Then, run <code>rake spec</code> to run the tests. You can
-also run <code>bin/console</code> for an interactive prompt that will allow
-you to experiment.</p>
+dependencies. Then, run <code>rake spec</code> to run the tests.</p>
 
 <p>To install this gem onto your local machine, run <code>bundle exec rake
 install</code>. To release a new version, update the version number in
@@ -126,7 +238,7 @@ conduct[https://github.com/[USERNAME]/find-like/blob/master/CODE_OF_CONDUCT.md].
 </div></div>
 
       <div id="footer">
-  Generated on Fri Apr 13 20:12:08 2018 by
+  Generated on Fri Apr 13 21:28:54 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>
