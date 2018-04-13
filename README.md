@@ -35,9 +35,19 @@ Open a terminal and do following to get ready to use find_like
 
 Find like execute similar to how ```find``` command work on unix systems.
 
-Lets try to understand each flag 
+Lets try to understand each argument 
 
-1. `--path=path` is a mandatory argument to start search this is the most basic command
+| Argument              | Description                                        |
+| :---:                  | :---:                                              |
+| `--path=path`          | A boolean ‘is a mandatory argument to start search this is the most basic command|
+| `[--P or --L]`          | These are optional argument. --P is default, in case none is supplied.-P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.
+                                                                                                  -L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
+| `--name=pattern`                  | True if the last component of the pathname being examined matches pattern .|
+| `--rname=pattern`                  | - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
+| `--type=f`                 | - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
+
+
+1. `--path=path` 
 
 ```find_like --path='directory-path-to-start-search-from''```
 
@@ -47,7 +57,7 @@ return all files/directory/links in the current directory recursively
 ```find_like --path=/Users/uditgupta```  
 return all files/directory/links in `/Users/uditgupta` recursively
 
-2. `[--P | --L]` These are optional argument. --P is default, in case none is supplied.
+2. `[--P | --L]`
 
 -P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.
 -L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.
@@ -55,14 +65,14 @@ return all files/directory/links in `/Users/uditgupta` recursively
 ```find_like --L --path=.```  
 return all files/directory/links in the current directory recursively, including the paths to the symlinks if any, else will resolve to originals.
 
-3. `--name=pattern` - True if the last component of the pathname being examined matches pattern .
+3. `--name=pattern` 
 ```find_like --path=. --name=*.rb```  
 return all files/directory/links that ends with .rb in the current directory recursively.
 
 ```find_like --path=/Users/uditgupta --name=test.rb```
 return all files that ends with test.rb in the `/Users/uditgupta` directory recursively.
 
-4. `--rname=pattern` - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`
+4. `--rname=pattern` 
  you can use the regular expression `'.*/[ba]*'` or `'.*/foo/.*'` or `'/foo/ '`.
  
 ```find_like --L --path=/Users/uditgupta --name=*.rb --rname="*/foo/*"```  
