@@ -100,11 +100,27 @@ $ bundle exec rake install</code></pre>
 <p>Find like execute similar to how <code>find</code> command work on unix
 systems.</p>
 
-<p>Lets try to understand each flag</p>
-<ol><li>
-<p><code>--path=path</code> is a mandatory argument to start search this is
-the most basic command</p>
-</li></ol>
+<p>Lets try to understand each argument</p>
+
+<p>| Argument | Description | | :—: | :—: | | <code>--path=path</code> | A
+boolean ‘is a mandatory argument to start search this is the most basic
+command| | <code>[--P or --L]</code> | These are optional argument. –P is
+default, in case none is supplied. –P - Cause the file information and file
+type returned for each symbolic link to be those of the link itself. This
+should be the default behaviour. –L - Cause the file information and file
+type returned for each symbolic link to be those of the file referenced by
+the link, not the link itself. If the reference file does not exist, the
+file information and type will be for the link itself.| |
+<code>--name=pattern</code> | True if the last component of the pathname
+being examined matches pattern .| | <code>--rname=pattern</code> | True if
+the whole path of the file matches pattern using regular expression. To
+match a file named <code>&#39;./foo/bar&#39;</code>| |
+<code>--type=f</code> | True if the whole path of the file matches pattern
+using regular expression. To match a file named
+<code>&#39;./foo/bar&#39;</code>|</p>
+<ul><li>
+<p><code>--path=path</code></p>
+</li></ul>
 
 <pre class="code ruby"><code class="ruby">--path=&#39;directory-path-to-start-search-from&#39;&#39;</code></pre>
 
@@ -116,10 +132,9 @@ the most basic command</p>
 
 <p>return all files/directory/links in <code>/Users/uditgupta</code>
 recursively</p>
-<ol><li>
-<p><code>[--P | --L]</code> These are optional argument. –P is default, in
-case none is supplied.</p>
-</li></ol>
+<ul><li>
+<p><code>[--P | --L]</code></p>
+</li></ul>
 
 <p>-P - Cause the file information and file type returned for each symbolic
 link to be those of the link itself. This should be the default behaviour.
@@ -132,34 +147,31 @@ for the link itself.</p>
 
 <p>return all files/directory/links in the current directory recursively,
 including the paths to the symlinks if any, else will resolve to originals.</p>
-<ol><li>
-<p><code>--name=pattern</code> - True if the last component of the pathname
-being examined matches pattern . <code>find_like --path=.
---name=*.rb</code><br> return all files/directory/links that ends with .rb
-in the current directory recursively.</p>
-</li></ol>
+<ul><li>
+<p><code>--name=pattern</code> <code>find_like --path=. --name=*.rb</code><br>
+return all files/directory/links that ends with .rb in the current
+directory recursively.</p>
+</li></ul>
 
 <pre class="code ruby"><code class="ruby">--path=/Users/uditgupta --name=test.rb</code></pre>
 
 <p>return all files that ends with test.rb in the
 <code>/Users/uditgupta</code> directory recursively.</p>
-<ol><li>
-<p><code>--rname=pattern</code> - True if the whole path of the file matches
-pattern using regular expression. To match a file named
-<code>&#39;./foo/bar&#39;</code>  you can use the regular expression
+<ul><li>
+<p><code>--rname=pattern</code>  you can use the regular expression
 <code>&#39;.*/[ba]*&#39;</code> or
 <code>&#39;.<strong>/foo/.</strong>&#39;</code> or <code>&#39;/foo/
 &#39;</code>.</p>
-</li></ol>
+</li></ul>
 
 <pre class="code ruby"><code class="ruby">--L --path=/Users/uditgupta --name=*.rb --rname=&quot;*/foo/*&quot;</code></pre>
 
 <p>return all files that ends with .rb and matches regular expression
 <strong><code>/foo/</code></strong> in the <code>/Users/uditgupta</code>
 directory recursively.</p>
-<ol><li>
+<ul><li>
 <p><code>--type=f|d|l</code></p>
-</li></ol>
+</li></ul>
 
 <pre class="code ruby"><code class="ruby">--path=. --type=d</code></pre>
 
@@ -178,12 +190,11 @@ directory recursively.</p>
 <p>Using Travis CI to keep a check on the health of <code>master</code>
 branch.  [Travis find_like]: <a
 href="https://travis-ci.org/45minutepromise/find-like">travis-ci.org/45minutepromise/find-like</a></p>
+
+<p>Each pushed commit runs the test, both spec and unit tests.  + Check if the
+code passed the code analyzer <code>Rubocop</code>  [Rubocop]: <a
+href="https://github.com/bbatsov/rubocop">github.com/bbatsov/rubocop</a></p>
 <ul><li>
-<p>Each pushed commit runs the test, both spec and unit tests.</p>
-</li><li>
-<p>Check if the code passed the code analyzer <code>Rubocop</code> [Rubocop]:
-<a href="https://github.com/bbatsov/rubocop">github.com/bbatsov/rubocop</a></p>
-</li><li>
 <p>Check if the code coverage is upto the mark, using <code>coveralls</code>
 to handle that: [coveralls]: <a
 href="https://coveralls.io/github/45minutepromise/find-like?branch=master">coveralls.io/github/45minutepromise/find-like?branch=master</a></p>
@@ -238,7 +249,7 @@ conduct[https://github.com/[USERNAME]/find-like/blob/master/CODE_OF_CONDUCT.md].
 </div></div>
 
       <div id="footer">
-  Generated on Fri Apr 13 21:28:54 2018 by
+  Generated on Fri Apr 13 22:08:53 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

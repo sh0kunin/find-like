@@ -20,18 +20,20 @@ RuboCop::RakeTask.new(:rubocop) do |t|
 end
 
 Rake::TestTask.new do |t|
-  task :test => 'clean'
-  t.warning = true
-  t.verbose = true
+  t.libs << 'spec'
+  t.libs << 'lib'
+  t.test_files = FileList['spec/**/test_*.rb']
+  t.warning = false
+  #t.options = '--junit --junit-filename=tests_report.junit --junit-jenkins'
 end
 
 task :t => :test
 
 task :ci do
   begin
-    Rake::Task[:rubocop].invoke
     Rake::Task[:docs].invoke
     Rake::Task[:spec].invoke
+    Rake::Task[:test].invoke
   ensure
     Rake::Task[:spec].invoke
   end
