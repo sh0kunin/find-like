@@ -26,7 +26,7 @@ Or install it yourself as:
 ## Command line installation
 Open a terminal and do following to get ready to use find_like
  
-    $ git clone ```https://github.com/45minutepromise/find-like```
+    $ git clone https://github.com/45minutepromise/find-like
     $ cd find-like
     $ bundle install
     $ bundle exec rake install
@@ -62,34 +62,42 @@ return all files/directory/links that ends with .rb in the current directory rec
 ```find_like --path=/Users/uditgupta --name=test.rb```
 return all files that ends with test.rb in the `/Users/uditgupta` directory recursively.
 
-4. `--rname=pattern` - True if the whole path of the file matches pattern using regular expression. To match a file named ``./foo/bar'', you can use the regular expression ``.*/[ba]*'' or ``.*/foo/.*'' or ``/foo/''.
+4. `--rname=pattern` - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`
+ you can use the regular expression `'.*/[ba]*'` or `'.*/foo/.*'` or `'/foo/ '`.
+ 
 ```find_like --L --path=/Users/uditgupta --name=*.rb --rname="*/foo/*"```  
 return all files that ends with .rb and matches regular expression `*/foo/*` in the `/Users/uditgupta` directory recursively.
 
 5. `--type=f|d|l`
-```find_like --path=. --type=d""```
+```find_like --path=. --type=d```
 return only directories in current directory recursively.
 
-```find_like --path=f --type=d""```
+```find_like --path=. --type=d```
 return only files in current directory recursively.
 
-```find_like --path=l --type=d""```
+```find_like --path=. --type=d```
 return only links in current directory recursively.
 
-## CI
+## Continuous Integration  
 
 Using Travis CI to keep a check on the health of `master` branch.
+    [Travis find_like]: https://travis-ci.org/45minutepromise/find-like
+   
  - Each pushed commit runs the test, both spec and unit tests.
- - Check if the code passed the code analyzer `Rubocop` 
-    `https://github.com/bbatsov/rubocop`
+ - Check if the code passed the code analyzer  `Rubocop`
+    [Rubocop]: https://github.com/bbatsov/rubocop
+
  - Check if the code coverage is upto the mark, using `coveralls` to handle that:
-    `https://coveralls.io/github/45minutepromise/find-like?branch=master`
+    [coveralls]: https://coveralls.io/github/45minutepromise/find-like?branch=master
+
  - Check if the documentation is up to date. Using Yard to handle library documentation
-    `https://github.com/lsegal/yard`
+     [Yard]: https://github.com/lsegal/yard
+   
     You can also read complete documentation of the project
     
-To run the CI task locally 
-        $ bundle exec rake ci
+To run the CI task locally
+ 
+    $ bundle exec rake ci
 
 ## Test
 
