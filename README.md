@@ -69,6 +69,7 @@ return all files that ends with test.rb in the `/Users/uditgupta` directory recu
 return all files that ends with .rb and matches regular expression `*/foo/*` in the `/Users/uditgupta` directory recursively.
 
 5. `--type=f|d|l`
+
 ```find_like --path=. --type=d```
 return only directories in current directory recursively.
 
