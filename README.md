@@ -47,7 +47,7 @@ return all files/directory/links in the current directory recursively
 ```find_like --path=/Users/uditgupta```  
 return all files/directory/links in `/Users/uditgupta` recursively
 
-2. [--P | --L] These are optional argument. --P is default, in case none is supplied.
+2. `[--P | --L]` These are optional argument. --P is default, in case none is supplied.
 
 -P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.
 -L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.
@@ -76,11 +76,28 @@ return only files in current directory recursively.
 ```find_like --path=l --type=d""```
 return only links in current directory recursively.
 
+## CI
+
+Using Travis CI to keep a check on the health of `master` branch.
+ - Each pushed commit runs the test, both spec and unit tests.
+ - Check if the code passed the code analyzer `Rubocop` 
+    `https://github.com/bbatsov/rubocop`
+ - Check if the code coverage is upto the mark, using `coveralls` to handle that:
+    `https://coveralls.io/github/45minutepromise/find-like?branch=master`
+ - Check if the documentation is up to date. Using Yard to handle library documentation
+    `https://github.com/lsegal/yard`
+    You can also read complete documentation of the project
+    
+To run the CI task locally 
+        $ bundle exec rake ci
+
 ## Test
-I have added 
+
+This repository have rspec test and unit test to full coverage of the code
+  
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
