@@ -1,7 +1,16 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   DisplayCopNames: true
   Exclude:
     - 'spec/**/*.rb'
     - 'Rakefile'
-    - 'find_like-like.gemspec'
+    - 'find_like.gemspec'
+
   TargetRubyVersion: 2.4
+
+Metrics/LineLength:
+  Exclude:
+     - 'lib/find_like/command/path.rb'
+     - 'lib/find_like/command.rb'
+
