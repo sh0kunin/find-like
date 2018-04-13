@@ -98,10 +98,6 @@ module FindLike
         next if file == '.'
         next if file == '..'
 
-        if exclude_dir_regex
-          next if exclude_dir_regex.match?(file)
-        end
-
         file = File.join(path, file)
 
         stat_method = @follow ? :lstat : :stat
@@ -139,6 +135,10 @@ module FindLike
 
         if file_regex
           next unless file_regex.match?(file)
+        end
+
+        if exclude_dir_regex
+          next if exclude_dir_regex.match?(file)
         end
 
         if @ftype

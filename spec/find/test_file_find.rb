@@ -52,7 +52,7 @@ class Test_File_Find < Test::Unit::TestCase
     assert_nil(@file_find_obj.exclude_dir)
   end
 
-  test "find method with prune option works as expected" do
+  test "find method with exclude_dir option works as expected" do
     find_file_second = FindLike::FileFind.new(nil, '*.txt', nil, "/foo/", false, ".")
     assert_equal('baz.txt', File.basename(find_file_second.find.first))
   end
