@@ -40,13 +40,13 @@ Lets try to understand each argument
 | Argument              | Description                                        |
 | :---:                  | :---:                                              |
 | `--path=path`          | A boolean ‘is a mandatory argument to start search this is the most basic command|
-| `[--P or --L]`          | These are optional argument. --P is default, in case none is supplied. --P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour. --L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
-| `--name=pattern`                  | True if the last component of the pathname being examined matches pattern .|
-| `--rname=pattern`                  | - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
-| `--type=f`                 | - True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
+| `[--P or --L]`         | These are optional argument. --P is default, in case none is supplied. --P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour. --L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
+| `--name=pattern`       | True if the last component of the pathname being examined matches pattern .|
+| `--rname=pattern`      | True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
+| `--type=f`             | True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
 
 
-1. `--path=path` 
+* `--path=path` 
 
 ```find_like --path='directory-path-to-start-search-from''```
 
@@ -56,7 +56,7 @@ return all files/directory/links in the current directory recursively
 ```find_like --path=/Users/uditgupta```  
 return all files/directory/links in `/Users/uditgupta` recursively
 
-2. `[--P | --L]`
+* `[--P | --L]`
 
 -P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.
 -L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.
@@ -64,20 +64,20 @@ return all files/directory/links in `/Users/uditgupta` recursively
 ```find_like --L --path=.```  
 return all files/directory/links in the current directory recursively, including the paths to the symlinks if any, else will resolve to originals.
 
-3. `--name=pattern` 
+* `--name=pattern` 
 ```find_like --path=. --name=*.rb```  
 return all files/directory/links that ends with .rb in the current directory recursively.
 
 ```find_like --path=/Users/uditgupta --name=test.rb```
 return all files that ends with test.rb in the `/Users/uditgupta` directory recursively.
 
-4. `--rname=pattern` 
+* `--rname=pattern` 
  you can use the regular expression `'.*/[ba]*'` or `'.*/foo/.*'` or `'/foo/ '`.
  
 ```find_like --L --path=/Users/uditgupta --name=*.rb --rname="*/foo/*"```  
 return all files that ends with .rb and matches regular expression `*/foo/*` in the `/Users/uditgupta` directory recursively.
 
-5. `--type=f|d|l`
+* `--type=f|d|l`
 
 ```find_like --path=. --type=d```
 return only directories in current directory recursively.
@@ -93,14 +93,14 @@ return only links in current directory recursively.
 Using Travis CI to keep a check on the health of `master` branch.
     [Travis find_like]: https://travis-ci.org/45minutepromise/find-like
    
- - Each pushed commit runs the test, both spec and unit tests.
- - Check if the code passed the code analyzer  `Rubocop`
+ Each pushed commit runs the test, both spec and unit tests.
+ + Check if the code passed the code analyzer  `Rubocop`
     [Rubocop]: https://github.com/bbatsov/rubocop
 
- - Check if the code coverage is upto the mark, using `coveralls` to handle that:
+ + Check if the code coverage is upto the mark, using `coveralls` to handle that:
     [coveralls]: https://coveralls.io/github/45minutepromise/find-like?branch=master
 
- - Check if the documentation is up to date. Using Yard to handle library documentation
+ + Check if the documentation is up to date. Using Yard to handle library documentation
      [Yard]: https://github.com/lsegal/yard
    
     You can also read complete documentation of the project
