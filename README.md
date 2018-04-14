@@ -16,13 +16,10 @@ The synopsis of the command line interface adhere to the following format:
  
     $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
     
-2. Bundler : Open a terminal 
-
-    
-    $ gem install bundler
-    
- [Bundler](http://bundler.io/)
-    
+2.  [Bundler](http://bundler.io/) Open a terminal
+        
+        $ gem install bundler
+        
 ## Command line installation
 Open a terminal and do following to get ready to use find_like
  
