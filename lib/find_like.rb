@@ -5,7 +5,7 @@ require 'find_like/command'
 require 'find_like/version'
 require 'find_like/feature/file_find'
 require 'fileutils'
-require 'find_like/Utils/util'
+require 'find_like/utils/util'
 require 'parallel'
 require 'claide'
 
