@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/45minutepromise/find-like.png?branch=master)](https://travis-ci.org/45minutepromise/find-like)
 [![Coverage Status](https://coveralls.io/repos/github/45minutepromise/find-like/badge.svg?branch=master)](https://coveralls.io/github/45minutepromise/find-like?branch=master)
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/github/45minutepromise/find-like/master)
 
 find -like tool is a comand line interface, that will allow you to search for files in a directory hierarchy.
 The synopsis of the command line interface adhere to the following format:
@@ -85,17 +86,14 @@ After your docker shell container is up, following are the usages :
 ## Command line Prerequisite 
 
 1. Ruby 2.4 : You can use rvm to maintain your rubies and install ruby 2.4.
-[RVM]: https://rvm.io/rvm/install
- 
-    $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
-    
-2. Bundler : Open a terminal 
+[RVM](https://rvm.io/rvm/install)
 
+    $ `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
     
-    $ gem install bundler
-    
- [Bundler]: http://bundler.io/
-    
+2.  [Bundler](http://bundler.io/) Open a terminal
+        
+        $ gem install bundler
+        
 ## Command line installation
 Open a terminal and do following to get ready to use find_like
  
@@ -114,7 +112,7 @@ Lets try to understand each argument
 | Argument              | Description                                        |
 | ---                  | ---                                              |
 | `--path=path`          | This is a mandatory argument, provide path where you want to start search from.|
-| `[--P or --L]`         | These are optional argument. --P is default, in case none is supplied. --P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour. --L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
+| `[--P or --L]`         | These are optional argument. --P is default, in case none is supplied. <br> --P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour. <br> --L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
 | `--name=pattern`       | True if the last component of the pathname being examined matches pattern .|
 | `--rname=pattern`      | True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
 | `--type=f`             | True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
@@ -173,20 +171,20 @@ return all files excluding the directory `.git`.
 ## Continuous Integration  
 
 Using Travis CI to keep a check on the health of `master` branch.
-    [Travis find_like]: https://travis-ci.org/45minutepromise/find-like
+    [Travis find_like](https://travis-ci.org/45minutepromise/find-like)
    
  Each pushed commit runs the test, both spec and unit tests.
  + Check if the code passed the code analyzer  `Rubocop`
-    [Rubocop]: https://github.com/bbatsov/rubocop
+    [Rubocop](https://github.com/bbatsov/rubocop)
 
  + Check if the code coverage is upto the mark, using `coveralls` to handle that:
-    [coveralls]: https://coveralls.io/github/45minutepromise/find-like?branch=master
+    [coveralls](https://coveralls.io/github/45minutepromise/find-like?branch=master)
 
  + Check if the documentation is up to date. Using Yard to handle library documentation
-     [Yard]: https://github.com/lsegal/yard
+     [Yard](https://github.com/lsegal/yard)
    
     You can also read complete documentation of the find-like project here,
-    [find-like] (http://www.rubydoc.info/github/45minutepromise/find-like/master)
+    [find-like](http://www.rubydoc.info/github/45minutepromise/find-like/master)
     
 To run the CI task locally
  
