@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/45minutepromise/find-like.png?branch=master)](https://travis-ci.org/45minutepromise/find-like)
 [![Coverage Status](https://coveralls.io/repos/github/45minutepromise/find-like/badge.svg?branch=master)](https://coveralls.io/github/45minutepromise/find-like?branch=master)
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/github/45minutepromise/find-like/master)
 
 find -like tool is a comand line interface, that will allow you to search for files in a directory hierarchy.
 The synopsis of the command line interface adhere to the following format:
