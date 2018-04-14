@@ -7,8 +7,82 @@ find -like tool is a comand line interface, that will allow you to search for fi
 The synopsis of the command line interface adhere to the following format:
 ``find [--P | --L] [--exclude-dir=path] --path=path [expression]``
 
+You can choose any of the below installation process.
+Suggested : Docker, simplest and lightweight.
 
-## Prerequisite 
+## Docker Prerequisite 
+* [Docker Installation](https://docs.docker.com/install/#supported-platforms)
+
+## Docker installation for find_like
+
+    $ git clone https://github.com/45minutepromise/find-like
+    $ cd find-like
+    $ docker build -t find_like .
+    $ docker run -it find_like sh
+    
+After your docker shell container is up, following are the usages : 
+    
+    $ find_like --help
+    /app $ find_like --help
+    Usage:
+    
+        $ find_like [--P | --L] [--exclude-dir=path] --path=path [expression]
+    
+          find like helps you to search files, links or directories in your system based
+          on the below rules. For example find_like --path=. --name=*.txt --type=f
+    
+    Options:
+    
+        --P                  Cause the file information and file type returned for each
+                             symbolic link to be those of the link itself. This should be
+                             the default behaviour.
+        --L                  Cause the file information and file type returned for each
+                             symbolic link to be those of the file referenced by the link,
+                             not the link itself. If the reference file does not exist,
+                             the file information and type will be for the link itself.
+        --exclude-dir=path   The directory tree specified by path will be excluded from
+                             the list of directory trees searched by this tool.
+        --path               Mandatory - Path to start search in your
+                             directories.
+        --type               True if the file is of the specified type. Possible file
+                             types are as follows:                       d :directory     
+                             f :regularfile                       l :symboliclink
+        --name               True if the last component of the pathname being examined
+                             matches  pattern .
+        --rname              Like  -name , but the  pattern  is evaluated as a regular
+                             expression.
+
+
+    /app $ find_like --path=. --name=*.rb
+    ./spec/spec_helper.rb
+    ./spec/find/like_spec.rb
+    ./spec/find/test_file_find.rb
+    ./lib/find_like.rb
+    ./lib/find_like/command.rb
+    ./lib/find_like/version.rb
+    ./lib/find_like/feature/file_find.rb
+    ./lib/find_like/utils/util.rb
+    
+    /app $ find_like --path=. --name=*.rb --exclude-dir=find
+    ./spec/spec_helper.rb
+    ./lib/find_like.rb
+    ./lib/find_like/command.rb
+    ./lib/find_like/version.rb
+    ./lib/find_like/feature/file_find.rb
+    ./lib/find_like/utils/util.rb
+
+    /app $ find_like --path=. --name=*.rb --exclude-dir=find --type=d
+    find_like : Sorry, your query didn't find any matching directory
+    
+    /app $ find_like --path=. --name=*.rb --exclude-dir=find --rname=/find_like/
+    ./lib/find_like/command.rb
+    ./lib/find_like/version.rb
+    ./lib/find_like/feature/file_find.rb
+    ./lib/find_like/utils/util.rb
+
+
+    
+## Command line Prerequisite 
 
 1. Ruby 2.4 : You can use rvm to maintain your rubies and install ruby 2.4.
 [RVM]: https://rvm.io/rvm/install
