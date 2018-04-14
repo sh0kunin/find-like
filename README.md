@@ -12,7 +12,7 @@ The synopsis of the command line interface adhere to the following format:
 ## Prerequisite 
 
 1. Ruby 2.4 : You can use rvm to maintain your rubies and install ruby 2.4.
-[RVM]: https://rvm.io/rvm/install
+[RVM](https://rvm.io/rvm/install)
  
     $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
     
@@ -21,7 +21,7 @@ The synopsis of the command line interface adhere to the following format:
     
     $ gem install bundler
     
- [Bundler]: http://bundler.io/
+ [Bundler](http://bundler.io/)
     
 ## Command line installation
 Open a terminal and do following to get ready to use find_like
