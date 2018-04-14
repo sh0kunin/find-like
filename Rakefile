@@ -19,19 +19,18 @@ RuboCop::RakeTask.new(:rubocop) do |t|
   t.options = ['--display-cop-names']
 end
 
-Rake::TestTask.new do |t|
+Rake::TestTask.new(:unit) do |t|
   t.libs << 'spec'
   t.libs << 'lib'
   t.test_files = FileList['spec/**/test_*.rb']
   t.warning = false
-  #t.options = '--junit --junit-filename=tests_report.junit --junit-jenkins'
 end
 
 
 task :test do
   begin
     Rake::Task[:spec].invoke
-    Rake::Task[:t].invoke
+    Rake::Task[:unit].invoke
   ensure
     Rake::Task[:spec].invoke
   end

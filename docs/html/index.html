@@ -100,15 +100,15 @@ systems.</p>
 
 <p>Lets try to understand each argument</p>
 
-<p>| Argument | Description | | :—: | :—: | | <code>--path=path</code> | A
-boolean ‘is a mandatory argument to start search this is the most basic
-command| | <code>[--P or --L]</code> | These are optional argument. –P is
-default, in case none is supplied. –P - Cause the file information and file
-type returned for each symbolic link to be those of the link itself. This
-should be the default behaviour. –L - Cause the file information and file
-type returned for each symbolic link to be those of the file referenced by
-the link, not the link itself. If the reference file does not exist, the
-file information and type will be for the link itself.| |
+<p>| Argument | Description | | — | — | | <code>--path=path</code> | This is a
+mandatory argument, provide path where you want to start search from.| |
+<code>[--P or --L]</code> | These are optional argument. –P is default, in
+case none is supplied. –P - Cause the file information and file type
+returned for each symbolic link to be those of the link itself. This should
+be the default behaviour. –L - Cause the file information and file type
+returned for each symbolic link to be those of the file referenced by the
+link, not the link itself. If the reference file does not exist, the file
+information and type will be for the link itself.| |
 <code>--name=pattern</code> | True if the last component of the pathname
 being examined matches pattern .| | <code>--rname=pattern</code> | True if
 the whole path of the file matches pattern using regular expression. To
@@ -210,7 +210,8 @@ href="https://coveralls.io/github/45minutepromise/find-like?branch=master">cover
 documentation  [Yard]: <a
 href="https://github.com/lsegal/yard">github.com/lsegal/yard</a></p>
 
-<p>You can also read complete documentation of the project</p>
+<p>You can also read complete documentation of the find-like project here, <a
+href="http://www.rubydoc.info/github/45minutepromise/find-like/master">find-like</a></p>
 </li></ul>
 
 <p>To run the CI task locally</p>
@@ -272,7 +273,7 @@ conduct[https://github.com/[USERNAME]/find-like/blob/master/CODE_OF_CONDUCT.md].
 </div></div>
 
       <div id="footer">
-  Generated on Sat Apr 14 23:21:55 2018 by
+  Generated on Sat Apr 14 23:36:19 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

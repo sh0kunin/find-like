@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a56204e1-be95-419c-9cc1-2b06afcf96fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/find/test_file_find.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/find/test_file_find.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rakefile" beforeDir="false" afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/FindLike.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/FindLike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/FindLike/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/FindLike/Command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/FindLike/FileFind.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/FindLike/FileFind.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/FindLike/Util.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/FindLike/Util.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/file.README.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/file.README.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/html/top-level-namespace.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/html/top-level-namespace.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,10 +71,19 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="508">
-                <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
+              <first_editor relative-caret-position="342">
+                <caret line="113" column="62" selection-start-line="113" selection-start-column="62" selection-end-line="113" selection-end-column="62" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rakefile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Rakefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -90,15 +106,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="command.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/find_like/command.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="36" column="162" selection-start-line="36" selection-start-column="162" selection-end-line="36" selection-end-column="162" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_file_find.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/find/test_file_find.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="like_spec.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="like_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/find/like_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="705">
@@ -164,14 +171,14 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/find_like/feature/file_find_recu.rb" />
         <option value="$PROJECT_DIR$/lib/find_like/feature/file_find_recurs.rb" />
-        <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/lib/find_like/command.rb" />
         <option value="$PROJECT_DIR$/lib/find_like/feature/file_find.rb" />
         <option value="$PROJECT_DIR$/.rubocop_todo.yml" />
         <option value="$PROJECT_DIR$/lib/find_like.rb" />
         <option value="$PROJECT_DIR$/lib/find_like/version.rb" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/spec/find/test_file_find.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Rakefile" />
       </list>
     </option>
   </component>
@@ -469,7 +476,7 @@
       <option name="presentableId" value="Default" />
       <updated>1523289142538</updated>
       <workItem from="1523289144081" duration="12943000" />
-      <workItem from="1523518320722" duration="73657000" />
+      <workItem from="1523518320722" duration="74172000" />
     </task>
     <servers />
   </component>
@@ -506,7 +513,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86600000" />
+    <option name="totallyTimeSpent" value="87115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -731,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/find_like/command.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -780,16 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="508">
-            <caret line="41" column="106" selection-start-line="41" selection-start-column="106" selection-end-line="41" selection-end-column="106" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/find_like/feature/file_find.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35">
@@ -808,6 +798,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="342">
+            <caret line="113" column="62" selection-start-line="113" selection-start-column="62" selection-end-line="113" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
         </state>
       </provider>
     </entry>
