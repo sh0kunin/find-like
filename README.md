@@ -7,22 +7,21 @@ find -like tool is a comand line interface, that will allow you to search for fi
 The synopsis of the command line interface adhere to the following format:
 ``find [--P | --L] [--exclude-dir=path] --path=path [expression]``
 
-## Installation
 
-Add this line to your application's Gemfile:
+## Prerequisite 
 
-```ruby
-gem 'find_like'
-```
+1. Ruby 2.4 : You can use rvm to maintain your rubies and install ruby 2.4.
+[RVM]: https://rvm.io/rvm/install
+ 
+    $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    
+2. Bundler : Open a terminal 
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install find_like
-
+    
+    $ gem install bundler
+    
+ [Bundler]: http://bundler.io/
+    
 ## Command line installation
 Open a terminal and do following to get ready to use find_like
  
@@ -31,6 +30,7 @@ Open a terminal and do following to get ready to use find_like
     $ bundle install
     $ bundle exec rake install
  
+
 ## Usage
 
 Find like execute similar to how ```find``` command work on unix systems.
@@ -88,6 +88,14 @@ return only files in current directory recursively.
 ```find_like --path=. --type=d```
 return only links in current directory recursively.
 
+* `--exclude-dir=name-of-the-directory`
+ 
+`find_like --path=.  --exclude-dir=find_like`
+return all files excluding the directory `find_like`.
+
+`find_like --path=.  --exclude-dir=.git`
+return all files excluding the directory `.git`.
+
 ## Continuous Integration  
 
 Using Travis CI to keep a check on the health of `master` branch.
@@ -109,9 +117,27 @@ To run the CI task locally
  
     $ bundle exec rake ci
 
+ ## Usage as a gem in your ruby project.
+ 
+ Add this line to your application's Gemfile:
+ 
+ ```ruby
+ gem 'find_like'
+ ```
+ 
+ And then execute:
+ 
+     $ bundle install
+ 
+ Or install it yourself as:
+ 
+     $ gem install find_like
+
 ## Test
 
-This repository has rspec tests and unit test to provide full coverage of the code
+This repository has rspec tests and unit test to provide full coverage of the code, Running the following command to executes all tests suite.
+
+    $ bundle exec rake test
   
 ## Development
 

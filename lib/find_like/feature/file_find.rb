@@ -57,7 +57,7 @@ module FindLike
                    exclude_dir,
                    follow, path)
       @ftype = type
-      @follow = !follow
+      @follow = follow
       @exclude_dir = exclude_dir
       @regex = rname
 
@@ -80,8 +80,19 @@ module FindLike
       results = [] unless block_given?
       # paths = @path.is_a?(String) ? [@path] : @path
 
-      exclude_dir_regex = (Regexp.new(@exclude_dir) if @exclude_dir)
-      file_regex = (Regexp.new(@regex) if @regex)
+      begin
+        exclude_dir_regex = @exclude_dir
+      rescue => ex
+        puts "--exclude_dir regex Skipping, #{ex.message}"
+        exit
+      end
+
+      begin
+        file_regex = (Regexp.new(@regex) if @regex)
+      rescue => ex
+        puts "--rname regex : Skipping, #{ex.message}"
+        exit
+      end
 
       recursively_find_file(exclude_dir_regex, path, results, file_regex)
 
@@ -98,12 +109,16 @@ module FindLike
         next if file == '.'
         next if file == '..'
 
-        file = File.join(path, file)
+        if exclude_dir_regex
+          next if exclude_dir_regex == file
+        end
+
+        file_path = File.join(path, file)
 
         stat_method = @follow ? :lstat : :stat
         # Skip files we cannot access, stale links, etc.
         begin
-          stat_info = File.send(stat_method, file)
+          stat_info = File.send(stat_method, file_path)
         rescue Errno::ENOENT, Errno::EACCES,
                Errno::EBADF, Errno::ELOOP, Errno::EPERM
           next
@@ -118,45 +133,46 @@ module FindLike
         #     @name
         # )
 
-        glob = File.join(File.dirname(file), @name)
+        glob = File.join(File.dirname(file_path), @name)
 
         # Remove backslash
         if File::ALT_SEPARATOR
-          file.tr!(File::ALT_SEPARATOR, File::SEPARATOR)
+          file_path.tr!(File::ALT_SEPARATOR, File::SEPARATOR)
           glob.tr!(File::ALT_SEPARATOR, File::SEPARATOR)
         end
 
-        # recursively call the find file if, its a directory
+        # recursively call the recursively_find_file if, its a directory
         if stat_info.directory?
-          recursively_find_file(exclude_dir_regex, file, results, file_regex)
+          recursively_find_file(
+            exclude_dir_regex,
+            file_path,
+            results,
+            file_regex
+          )
         end
 
         # next unless Dir[glob].include?(file)
 
         if file_regex
-          next unless file_regex.match?(file)
-        end
-
-        if exclude_dir_regex
-          next if exclude_dir_regex.match?(file)
+          next unless file_regex.match?(file_path)
         end
 
         if @ftype
-          next unless File.ftype(file) == @ftype
+          next unless File.ftype(file_path) == @ftype
         end
 
         if name != '*'
-          next unless Dir[glob].include?(file)
+          next unless Dir[glob].include?(file_path)
         end
 
         if block_given?
-          yield file
+          yield file_path
         else
-          puts file
-          results << file
+          puts file_path
+          results << file_path
         end
 
-        @previous = file unless @previous == file
+        @previous = file_path unless @previous == file_path
       end
 
     # Error handling based on this article
@@ -171,7 +187,6 @@ module FindLike
       exit
     rescue => ex
       puts "#{path}: Skipping, #{ex.message}"
-      # next # Skip other errors
     end
 
     def gracefully_handle_alt_separator(file, glob)

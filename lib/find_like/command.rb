@@ -34,7 +34,7 @@ module FindLike
 
     self.command = 'find_like [--P | --L] [--exclude-dir=path] --path=path [expression]'
     self.version = FindLike::VERSION
-    self.summary = 'find like helps you to search files, links or directories in your system based on the below rules'
+    self.summary = 'find like helps you to search files, links or directories in your system based on the below rules. For example find_like --path=. --name=*.txt --type=f'
 
     # parse options provide through command line for file_like command
     def self.options
@@ -69,18 +69,11 @@ module FindLike
       @type = argv.option('type')
       @name = argv.option('name')
       @rname = argv.option('rname')
-      # validate_options
       super
     end
 
-    # Validate if the options parsed are valid.
-    # Kills the script with appropriate reasons, if not.
-    def validate_options
-      # validate_name
-    end
-
     def run
-      FindLike::FileFind.new(type, name, rname, exclude_dir, l, path)
+      FindLike::FileFind.new(type, name, rname, exclude_dir, !l, path)
     end
 
     def validate!

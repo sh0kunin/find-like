@@ -27,7 +27,15 @@ Rake::TestTask.new do |t|
   #t.options = '--junit --junit-filename=tests_report.junit --junit-jenkins'
 end
 
-task :t => :test
+
+task :test do
+  begin
+    Rake::Task[:spec].invoke
+    Rake::Task[:t].invoke
+  ensure
+    Rake::Task[:spec].invoke
+  end
+end
 
 task :ci do
   begin

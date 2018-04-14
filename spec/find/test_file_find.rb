@@ -52,9 +52,25 @@ class Test_File_Find < Test::Unit::TestCase
     assert_nil(@file_find_obj.exclude_dir)
   end
 
+  test "find method with name option works as expected" do
+    find_file_second = FindLike::FileFind.new(nil, '*.txt', nil, nil, false, ".")
+    assert_equal(4, find_file_second.find.size)
+  end
+
+
   test "find method with exclude_dir option works as expected" do
-    find_file_second = FindLike::FileFind.new(nil, '*.txt', nil, "/foo/", false, ".")
-    assert_equal('baz.txt', File.basename(find_file_second.find.first))
+    find_file_second = FindLike::FileFind.new(nil, '*.txt', nil, "dir", false, ".")
+    assert_equal(3, find_file_second.find.size)
+  end
+
+  test "find method with rname option works as expected" do
+    find_file_second = FindLike::FileFind.new(nil, '*.txt', '/directory/', "dir", false, ".")
+    assert_equal(1, find_file_second.find.size)
+  end
+
+  test "find method with file type option works as expected" do
+    find_file_second = FindLike::FileFind.new('f', '*.txt', nil, "dir", false, ".")
+    assert_equal(0, find_file_second.find.size)
   end
 
   test "version constant is set to expected value" do
@@ -62,8 +78,7 @@ class Test_File_Find < Test::Unit::TestCase
   end
 
   test "follow basic functionality" do
-    assert_equal(@file_find_obj.follow, true)
-    # assert_respond_to(@rule1, :path=)
+    assert_equal(@file_find_obj.follow, false)
   end
 
   test "path method returns expected value" do
@@ -98,7 +113,7 @@ class Test_File_Find < Test::Unit::TestCase
   end
 
   test "follow method returns expected default value" do
-    assert_true(@file_find_obj.follow)
+    assert_false(@file_find_obj.follow)
   end
 
   def teardown
