@@ -68,7 +68,7 @@ module FindLike
 
       if results.nil? || results.empty?
         puts "find_like : Sorry, your query didn't find"\
-             "any matching now #{type}"
+             " any matches #{type}"
       end
     end
 
