@@ -441,30 +441,6 @@ be those of the link itself.</p>
 </li>
 
       
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#validate_options-instance_method" title="#validate_options (instance method)">#<strong>validate_options</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Validate if the options parsed are valid.</p>
-</div></span>
-  
-</li>
-
-      
     </ul>
   
 
@@ -507,8 +483,7 @@ be those of the link itself.</p>
 70
 71
 72
-73
-74</pre>
+73</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 64</span>
@@ -521,8 +496,7 @@ be those of the link itself.</p>
   <span class='ivar'>@type</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_option'>option</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@name</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_option'>option</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>name</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@rname</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_option'>option</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rname</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='comment'># validate_options
-</span>  <span class='kw'>super</span>
+  <span class='kw'>super</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -947,15 +921,15 @@ be those of the link itself. This should be the default behaviour.</p>
       <pre class="lines">
 
 
-82
-83
-84</pre>
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 82</span>
+      <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
-  <span class='const'><span class='object_link'><a href="../FindLike.html" title="FindLike (module)">FindLike</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="FileFind.html" title="FindLike::FileFind (class)">FileFind</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="FileFind.html#initialize-instance_method" title="FindLike::FileFind#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_rname'>rname</span><span class='comma'>,</span> <span class='id identifier rubyid_exclude_dir'>exclude_dir</span><span class='comma'>,</span> <span class='id identifier rubyid_l'>l</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../FindLike.html" title="FindLike (module)">FindLike</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="FileFind.html" title="FindLike::FileFind (class)">FileFind</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="FileFind.html#initialize-instance_method" title="FindLike::FileFind#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_rname'>rname</span><span class='comma'>,</span> <span class='id identifier rubyid_exclude_dir'>exclude_dir</span><span class='comma'>,</span> <span class='op'>!</span><span class='id identifier rubyid_l'>l</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -977,14 +951,14 @@ be those of the link itself. This should be the default behaviour.</p>
       <pre class="lines">
 
 
-86
-87
-88
-89
-90</pre>
+79
+80
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_validate!'>validate!</span>
   <span class='kw'>super</span>
@@ -996,54 +970,12 @@ be those of the link itself. This should be the default behaviour.</p>
 </table>
 </div>
     
-      <div class="method_details ">
-  <h3 class="signature " id="validate_options-instance_method">
-  
-    #<strong>validate_options</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Validate if the options parsed are valid. Kills the script with appropriate
-reasons, if not.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-78
-79
-80</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/find_like/command.rb', line 78</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_validate_options'>validate_options</span>
-  <span class='comment'># validate_name
-</span><span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Fri Apr 13 22:08:53 2018 by
+  Generated on Sat Apr 14 23:21:56 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

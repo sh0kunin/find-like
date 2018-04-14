@@ -71,20 +71,18 @@ for files in a directory hierarchy. The synopsis of the command line
 interface adhere to the following format: <code>find [--P | --L]
 [--exclude-dir=path] --path=path [expression]</code></p>
 
-<h2 id="label-Installation">Installation</h2>
+<h2 id="label-Prerequisite">Prerequisite</h2>
+<ol><li>
+<p>Ruby 2.4 : You can use rvm to maintain your rubies and install ruby 2.4.
+[RVM]: <a href="https://rvm.io/rvm/install">rvm.io/rvm/install</a></p>
 
-<p>Add this line to your application&#39;s Gemfile:</p>
+<p>$ curl -sSL <a href="https://get.rvm.io">get.rvm.io</a> | bash -s stable
+--ruby</p>
+</li><li>
+<p>Bundler : Open a terminal</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>find_like</span><span class='tstring_end'>&#39;</span></span>
-</code></pre>
-
-<p>And then execute:</p>
-
-<pre class="code ruby"><code class="ruby">$ bundle install</code></pre>
-
-<p>Or install it yourself as:</p>
-
-<pre class="code ruby"><code class="ruby">$ gem install find_like</code></pre>
+<p>$ gem install bundler</p>
+</li></ol>
 
 <h2 id="label-Command+line+installation">Command line installation</h2>
 
@@ -184,6 +182,15 @@ directory recursively.</p>
 <pre class="code ruby"><code class="ruby">--path=. --type=d</code></pre>
 
 <p>return only links in current directory recursively.</p>
+<ul><li>
+<p><code>--exclude-dir=name-of-the-directory</code></p>
+</li></ul>
+
+<p><code>find_like --path=.  --exclude-dir=find_like</code> return all files
+excluding the directory <code>find_like</code>.</p>
+
+<p><code>find_like --path=.  --exclude-dir=.git</code> return all files
+excluding the directory <code>.git</code>.</p>
 
 <h2 id="label-Continuous+Integration">Continuous Integration</h2>
 
@@ -210,10 +217,26 @@ href="https://github.com/lsegal/yard">github.com/lsegal/yard</a></p>
 
 <pre class="code ruby"><code class="ruby">$ bundle exec rake ci</code></pre>
 
+<p>## Usage as a gem in your ruby project.</p>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<p><code>ruby  gem &#39;find_like&#39; </code></p>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby"> $ bundle install</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code class="ruby"> $ gem install find_like</code></pre>
+
 <h2 id="label-Test">Test</h2>
 
 <p>This repository has rspec tests and unit test to provide full coverage of
-the code</p>
+the code, Running the following command to executes all tests suite.</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle exec rake test</code></pre>
 
 <h2 id="label-Development">Development</h2>
 
@@ -249,7 +272,7 @@ conduct[https://github.com/[USERNAME]/find-like/blob/master/CODE_OF_CONDUCT.md].
 </div></div>
 
       <div id="footer">
-  Generated on Fri Apr 13 22:08:53 2018 by
+  Generated on Sat Apr 14 23:21:56 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>
