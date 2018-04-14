@@ -74,7 +74,7 @@ class Test_File_Find < Test::Unit::TestCase
   end
 
   test "version constant is set to expected value" do
-    assert_equal('0.2.0', FindLike::VERSION)
+    assert_equal('0.3.0', FindLike::VERSION)
   end
 
   test "follow basic functionality" do

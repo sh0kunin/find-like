@@ -39,7 +39,7 @@ Lets try to understand each argument
 
 | Argument              | Description                                        |
 | :---:                  | :---:                                              |
-| `--path=path`          | A boolean ‘is a mandatory argument to start search this is the most basic command|
+| `--path=path`          | This is a mandatory argument, provide path where you want to start search from.|
 | `[--P or --L]`         | These are optional argument. --P is default, in case none is supplied. --P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour. --L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.| 
 | `--name=pattern`       | True if the last component of the pathname being examined matches pattern .|
 | `--rname=pattern`      | True if the whole path of the file matches pattern using regular expression. To match a file named `'./foo/bar'`|
