@@ -130,7 +130,7 @@ return all files/directory/links in `/Users/uditgupta` recursively
 
 * `[--P | --L]`
 
--P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.
+-P - Cause the file information and file type returned for each symbolic link to be those of the link itself. This should be the default behaviour.<br>
 -L - Cause the file information and file type returned for each symbolic link to be those of the file referenced by the link, not the link itself. If the reference file does not exist, the file information and type will be for the link itself.
 
 ```find_like --L --path=.```  
